@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='sr'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fiat Panda 100HP prezentacija">
+    <meta name="keywords" content="Fiat Panda 100HP">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <title>Kontakt</title>
+</head>
+<body>
+    <header>
+        <h1 class="hero-title">Fiat Panda 100HP</h1>
+        <div class="controls">
+            <button id="themeBtn">Tema</button>
+            <button id="fontPlus">Font+</button>
+            <button id="fontMinus">Font-</button>
+        </div>
+        <div class="hamburger">☰</div>
+            <ul class="menu">
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="nastanak.html">Nastanak "stotke"</a></li>
+                <li class="dropdown">
+                    <p>Specifikacije</p>
+                    <ul class="dropdown-content">
+				        <li><a href="specifikacije100.html">Panda 100HP</a></li>
+                    </ul>
+                </li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
+    </header>
+    <h2>Da li Vam se dopao sadržaj? Imate pitanja? Kontaktirajte nas!</h2>
+    <form id='kontaktForma'>
+        <label for='ime'>Ime:</label>
+        <input type='text' id='ime' required minlength='2' placeholder='Ime'>
+        <label for='email'>Email:</label>
+        <input type='email' id='email' required placeholder='Email'>
+        <label for='poruka'>Poruka:</label>
+        <textarea id='poruka' required></textarea>
+        <button type='submit'>Pošalji</button>
+    </form>
+    <p id='lokacija'>Lokacija sedišta Fiata: FCA Italy, Torino, Italy</p>
+    <iframe src='https://www.google.com/maps?q=Fiat+Mirafiori+Torino&output=embed' width='100%' height='400'></iframe>
+    <script src='js/script.js'></script>
+</body>
+</html>
