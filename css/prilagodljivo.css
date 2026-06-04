@@ -1,0 +1,66 @@
+@media (max-width:768px){
+
+    .hamburger-dugme{
+        display:block;
+    }
+
+    .meni{
+        display:none;
+        flex-direction:column;
+        width:100%;
+    }
+
+    .meni.aktivno{
+        display:flex;
+    }
+
+    .sadrzaj-padajuceg-menija{
+        position:static;
+        width:100%;
+    }
+
+    .kontrole{
+        position:static;
+        justify-content:center;
+        margin:10px 0;
+    }
+
+    .slajder,
+    video,
+    iframe{
+        width:95%;
+        height:auto;
+        aspect-ratio:16/9;
+    }
+
+    form{
+        width:95%;
+    }
+
+    .hero{
+        width:95%;
+        height:auto;
+        aspect-ratio:16/9;
+        background-attachment:scroll;
+    }
+
+    /* ===== Nastanak stranica ===== */
+
+    .prica-hero{
+        background-attachment:scroll;
+        padding:30px 10px;
+    }
+
+    .prica-preklop{
+        width:95%;
+        padding:20px;
+    }
+
+}
+
+@media (min-width:769px){
+
+    .hamburger-dugme{
+        display:none;
+    }
+}

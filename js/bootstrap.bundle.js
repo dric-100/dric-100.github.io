@@ -282,7 +282,7 @@
    * Return the previous/next element of a list.
    *
    * @param {array} list    The list of elements
-   * @param activeElement   The active element
+   * @param activeElement   The aktivno element
    * @param shouldGetNext   Choose to get next or previous element
    * @param isCycleAllowed
    * @return {Element|elem} The proper element
@@ -911,7 +911,7 @@
   const DATA_KEY$9 = 'bs.button';
   const EVENT_KEY$a = `.${DATA_KEY$9}`;
   const DATA_API_KEY$6 = '.data-api';
-  const CLASS_NAME_ACTIVE$3 = 'active';
+  const CLASS_NAME_ACTIVE$3 = 'aktivno';
   const SELECTOR_DATA_TOGGLE$5 = '[data-bs-toggle="button"]';
   const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$a}${DATA_API_KEY$6}`;
 
@@ -1103,7 +1103,7 @@
   const ORDER_PREV = 'prev';
   const DIRECTION_LEFT = 'left';
   const DIRECTION_RIGHT = 'right';
-  const EVENT_SLIDE = `slide${EVENT_KEY$8}`;
+  const EVENT_SLIDE = `slajd${EVENT_KEY$8}`;
   const EVENT_SLID = `slid${EVENT_KEY$8}`;
   const EVENT_KEYDOWN$1 = `keydown${EVENT_KEY$8}`;
   const EVENT_MOUSEENTER$1 = `mouseenter${EVENT_KEY$8}`;
@@ -1112,13 +1112,13 @@
   const EVENT_LOAD_DATA_API$3 = `load${EVENT_KEY$8}${DATA_API_KEY$5}`;
   const EVENT_CLICK_DATA_API$5 = `click${EVENT_KEY$8}${DATA_API_KEY$5}`;
   const CLASS_NAME_CAROUSEL = 'carousel';
-  const CLASS_NAME_ACTIVE$2 = 'active';
-  const CLASS_NAME_SLIDE = 'slide';
+  const CLASS_NAME_ACTIVE$2 = 'aktivno';
+  const CLASS_NAME_SLIDE = 'slajd';
   const CLASS_NAME_END = 'carousel-item-end';
   const CLASS_NAME_START = 'carousel-item-start';
   const CLASS_NAME_NEXT = 'carousel-item-next';
   const CLASS_NAME_PREV = 'carousel-item-prev';
-  const SELECTOR_ACTIVE = '.active';
+  const SELECTOR_ACTIVE = '.aktivno';
   const SELECTOR_ITEM = '.carousel-item';
   const SELECTOR_ACTIVE_ITEM = SELECTOR_ACTIVE + SELECTOR_ITEM;
   const SELECTOR_ITEM_IMG = '.carousel-item img';
@@ -1431,7 +1431,7 @@
       carousel._maybeEnableCycle();
       return;
     }
-    if (Manipulator.getDataAttribute(this, 'slide') === 'next') {
+    if (Manipulator.getDataAttribute(this, 'slajd') === 'next') {
       carousel.next();
       carousel._maybeEnableCycle();
       return;
@@ -1543,7 +1543,7 @@
       }
       let activeChildren = [];
 
-      // find active children
+      // find aktivno children
       if (this._config.parent) {
         activeChildren = this._getFirstLevelChildren(SELECTOR_ACTIVES).filter(element => element !== this._element).map(element => Collapse.getOrCreateInstance(element, {
           toggle: false
@@ -3525,7 +3525,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap dropdown.js
+   * Bootstrap padajuci-meni.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -3535,8 +3535,8 @@
    * Constants
    */
 
-  const NAME$a = 'dropdown';
-  const DATA_KEY$6 = 'bs.dropdown';
+  const NAME$a = 'padajuci-meni';
+  const DATA_KEY$6 = 'bs.padajuci-meni';
   const EVENT_KEY$6 = `.${DATA_KEY$6}`;
   const DATA_API_KEY$3 = '.data-api';
   const ESCAPE_KEY$2 = 'Escape';
@@ -3558,7 +3558,7 @@
   const CLASS_NAME_DROPSTART = 'dropstart';
   const CLASS_NAME_DROPUP_CENTER = 'dropup-center';
   const CLASS_NAME_DROPDOWN_CENTER = 'dropdown-center';
-  const SELECTOR_DATA_TOGGLE$3 = '[data-bs-toggle="dropdown"]:not(.disabled):not(:disabled)';
+  const SELECTOR_DATA_TOGGLE$3 = '[data-bs-toggle="padajuci-meni"]:not(.disabled):not(:disabled)';
   const SELECTOR_DATA_TOGGLE_SHOWN = `${SELECTOR_DATA_TOGGLE$3}.${CLASS_NAME_SHOW$6}`;
   const SELECTOR_MENU = '.dropdown-menu';
   const SELECTOR_NAVBAR = '.navbar';
@@ -3597,7 +3597,7 @@
     constructor(element, config) {
       super(element, config);
       this._popper = null;
-      this._parent = this._element.parentNode; // dropdown wrapper
+      this._parent = this._element.parentNode; // padajuci-meni wrapper
       // TODO: v6 revert #37011 & change markup https://getbootstrap.com/docs/5.3/forms/input-group/
       this._menu = SelectorEngine.next(this._element, SELECTOR_MENU)[0] || SelectorEngine.prev(this._element, SELECTOR_MENU)[0] || SelectorEngine.findOne(SELECTOR_MENU, this._parent);
       this._inNavbar = this._detectNavbar();
@@ -3792,7 +3792,7 @@
         return;
       }
 
-      // if target isn't included in items (e.g. when expanding the dropdown)
+      // if target isn't included in items (e.g. when expanding the padajuci-meni)
       // allow cycling to get the last item in case key equals ARROW_UP_KEY
       getNextActiveElement(items, target, key === ARROW_DOWN_KEY$1, !items.includes(target)).focus();
     }
@@ -3826,7 +3826,7 @@
           continue;
         }
 
-        // Tab navigation through the dropdown menu or events from contained inputs shouldn't close the menu
+        // Tab navigation through the padajuci-meni meni or events from contained inputs shouldn't close the meni
         if (context._menu.contains(event.target) && (event.type === 'keyup' && event.key === TAB_KEY$1 || /input|select|option|textarea|form/i.test(event.target.tagName))) {
           continue;
         }
@@ -3840,8 +3840,8 @@
       }
     }
     static dataApiKeydownHandler(event) {
-      // If not an UP | DOWN | ESCAPE key => not a dropdown command
-      // If input/textarea && if key is other than ESCAPE => not a dropdown command
+      // If not an UP | DOWN | ESCAPE key => not a padajuci-meni command
+      // If input/textarea && if key is other than ESCAPE => not a padajuci-meni command
 
       const isInput = /input|textarea/i.test(event.target.tagName);
       const isEscapeEvent = event.key === ESCAPE_KEY$2;
@@ -5591,7 +5591,7 @@
   const EVENT_CLICK = `click${EVENT_KEY$2}`;
   const EVENT_LOAD_DATA_API$1 = `load${EVENT_KEY$2}${DATA_API_KEY}`;
   const CLASS_NAME_DROPDOWN_ITEM = 'dropdown-item';
-  const CLASS_NAME_ACTIVE$1 = 'active';
+  const CLASS_NAME_ACTIVE$1 = 'aktivno';
   const SELECTOR_DATA_SPY = '[data-bs-spy="scroll"]';
   const SELECTOR_TARGET_LINKS = '[href]';
   const SELECTOR_NAV_LIST_GROUP = '.nav, .list-group';
@@ -5599,7 +5599,7 @@
   const SELECTOR_NAV_ITEMS = '.nav-item';
   const SELECTOR_LIST_ITEMS = '.list-group-item';
   const SELECTOR_LINK_ITEMS = `${SELECTOR_NAV_LINKS}, ${SELECTOR_NAV_ITEMS} > ${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}`;
-  const SELECTOR_DROPDOWN = '.dropdown';
+  const SELECTOR_DROPDOWN = '.padajuci-meni';
   const SELECTOR_DROPDOWN_TOGGLE$1 = '.dropdown-toggle';
   const Default$1 = {
     offset: null,
@@ -5626,7 +5626,7 @@
     constructor(element, config) {
       super(element, config);
 
-      // this._element is the observablesContainer and config.target the menu links wrapper
+      // this._element is the observablesContainer and config.target the meni links wrapper
       this._targetLinks = new Map();
       this._observableSections = new Map();
       this._rootElement = getComputedStyle(this._element).overflowY === 'visible' ? null : this._element;
@@ -5779,13 +5779,13 @@
       });
     }
     _activateParents(target) {
-      // Activate dropdown parents
+      // Activate padajuci-meni parents
       if (target.classList.contains(CLASS_NAME_DROPDOWN_ITEM)) {
         SelectorEngine.findOne(SELECTOR_DROPDOWN_TOGGLE$1, target.closest(SELECTOR_DROPDOWN)).classList.add(CLASS_NAME_ACTIVE$1);
         return;
       }
       for (const listGroup of SelectorEngine.parents(target, SELECTOR_NAV_LIST_GROUP)) {
-        // Set triggered links parents as active
+        // Set triggered links parents as aktivno
         // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
         for (const item of SelectorEngine.prev(listGroup, SELECTOR_LINK_ITEMS)) {
           item.classList.add(CLASS_NAME_ACTIVE$1);
@@ -5859,10 +5859,10 @@
   const ARROW_DOWN_KEY = 'ArrowDown';
   const HOME_KEY = 'Home';
   const END_KEY = 'End';
-  const CLASS_NAME_ACTIVE = 'active';
+  const CLASS_NAME_ACTIVE = 'aktivno';
   const CLASS_NAME_FADE$1 = 'fade';
   const CLASS_NAME_SHOW$1 = 'show';
-  const CLASS_DROPDOWN = 'dropdown';
+  const CLASS_DROPDOWN = 'padajuci-meni';
   const SELECTOR_DROPDOWN_TOGGLE = '.dropdown-toggle';
   const SELECTOR_DROPDOWN_MENU = '.dropdown-menu';
   const NOT_SELECTOR_DROPDOWN_TOGGLE = `:not(${SELECTOR_DROPDOWN_TOGGLE})`;
@@ -5899,25 +5899,25 @@
 
     // Public
     show() {
-      // Shows this elem and deactivate the active sibling if exists
+      // Shows this elem and deactivate the aktivno sibling if exists
       const innerElem = this._element;
       if (this._elemIsActive(innerElem)) {
         return;
       }
 
-      // Search for active tab on same parent to deactivate it
-      const active = this._getActiveElem();
-      const hideEvent = active ? EventHandler.trigger(active, EVENT_HIDE$1, {
+      // Search for aktivno tab on same parent to deactivate it
+      const aktivno = this._getActiveElem();
+      const hideEvent = aktivno ? EventHandler.trigger(aktivno, EVENT_HIDE$1, {
         relatedTarget: innerElem
       }) : null;
       const showEvent = EventHandler.trigger(innerElem, EVENT_SHOW$1, {
-        relatedTarget: active
+        relatedTarget: aktivno
       });
       if (showEvent.defaultPrevented || hideEvent && hideEvent.defaultPrevented) {
         return;
       }
-      this._deactivate(active, innerElem);
-      this._activate(innerElem, active);
+      this._deactivate(aktivno, innerElem);
+      this._activate(innerElem, aktivno);
     }
 
     // Private
