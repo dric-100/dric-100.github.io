@@ -1,1 +1,0 @@
-Dodajte svoje slike, video, PDF, fontove i Bootstrap fajlove u odgovarajuće foldere.
