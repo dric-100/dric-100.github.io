@@ -1,63 +1,51 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   const ham = document.querySelector('.hamburger-dugme');
   if (ham) ham.onclick = () => document.querySelector('.meni').classList.toggle('aktivno');
 
-  const slides = document.querySelectorAll('.slajd');
-  let currentSlide = 0;
-  if (slides.length) {
+  const slajdovi = document.querySelectorAll('.slajd');
+  let trenutniSlajd = 0;
+  if (slajdovi.length) {
     setInterval(() => {
-      slides[currentSlide].classList.remove('aktivno');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('aktivno');
+      slajdovi[trenutniSlajd].classList.remove('aktivno');
+      trenutniSlajd = (trenutniSlajd + 1) % slajdovi.length;
+      slajdovi[trenutniSlajd].classList.add('aktivno');
     }, 3000);
   }
 
-  if (localStorage.getItem('theme') === 'true') document.body.classList.add('dark');
+  if (localStorage.getItem('tema') === 'true') document.body.classList.add('tamno');
 
   const temaDugme = document.getElementById('temaDugme');
   if (temaDugme) {
     temaDugme.onclick = () => {
-      document.body.classList.toggle('dark');
-      localStorage.setItem('theme', document.body.classList.contains('dark'));
+      document.body.classList.toggle('tamno');
+      localStorage.setItem('tema', document.body.classList.contains('tamno'));
     };
   }
 
-  let size = parseInt(localStorage.getItem('font') || '16', 10);
-  document.documentElement.style.fontSize = `${size}px`;
+  let fontVelicina = parseInt(localStorage.getItem('font') || '16', 10);
+  document.documentElement.style.fontSize = `${fontVelicina}px`;
 
   const fontUvecaj = document.getElementById('fontUvecaj');
   const fontUmanji = document.getElementById('fontUmanji');
 
   if (fontUvecaj) {
     fontUvecaj.onclick = () => {
-      size += 2;
-      document.documentElement.style.fontSize = `${size}px`;
-      localStorage.setItem('font', size);
+      fontVelicina += 2;
+      document.documentElement.style.fontSize = `${fontVelicina}px`;
+      localStorage.setItem('font', fontVelicina);
     };
   }
   if (fontUmanji) {
     fontUmanji.onclick = () => {
-      size -= 2;
-      document.documentElement.style.fontSize = `${size}px`;
-      localStorage.setItem('font', size);
+      fontVelicina -= 2;
+      document.documentElement.style.fontSize = `${fontVelicina}px`;
+      localStorage.setItem('font', fontVelicina);
     };
   }
 
-  const forma = document.getElementById('kontaktForma');
-  if (forma) {
-    forma.addEventListener('submit', (e) => {
-      const ime = document.getElementById('ime').value;
-      if (ime.length < 2) {
-        alert('Ime mora imati najmanje 2 karaktera');
-        e.preventDefault();
-      }
-    });
-  }
-
-  const hero = document.getElementById("heroParallax");
+  const pozadina = document.getElementById("pozadinaParallax");
     window.addEventListener("scroll", () => {
         const offset = window.pageYOffset;
-        hero.style.backgroundPositionY = `${offset * 0.3}px`;
+        pozadina.style.backgroundPositionY = `${offset * 0.9}px`;
     });
 });

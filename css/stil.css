@@ -6,7 +6,7 @@
         0 0 20px rgba(0,0,0,0.30);
 }
 
-body.dark{
+body.tamno{
     --bg: #111111;
     --text: #ffffff;
     --media-shadow:
@@ -247,7 +247,7 @@ iframe{
 
 /* ===== Hero slika na stranici Nastanak ===== */
 
-.hero-parallax{
+.heroj-parallax{
     width:100%;
     height:315px;
     max-width:100%;
@@ -275,7 +275,7 @@ form{
     box-shadow:var(--media-shadow);
 }
 
-body.dark form{
+body.tamno form{
     background:rgba(255,255,255,.05);
 }
 
@@ -298,8 +298,8 @@ form textarea{
         transform .2s ease;
 }
 
-body.dark form input,
-body.dark form textarea{
+body.tamno form input,
+body.tamno form textarea{
     background:#222;
     color:white;
 }
@@ -391,7 +391,7 @@ form button[type="submit"]:aktivno{
         0 0 25px rgba(0,0,0,.25);
 }
 
-body.dark .prica-preklop{
+body.tamno .prica-preklop{
     background:rgba(15,15,15,.82);
     color:#ffffff;
     box-shadow:
@@ -438,25 +438,25 @@ body.dark .prica-preklop{
     color:var(--text);
 }
 
-body.dark .accordion-item{
+body.tamno .accordion-item{
     border-color:#444;
 }
 
-body.dark .accordion-button{
+body.tamno .accordion-button{
     background:#1a1a1a;
     color:white;
 }
 
-body.dark .accordion-button:not(.collapsed){
+body.tamno .accordion-button:not(.collapsed){
     background:#660000;
     color:white;
 }
 
-body.dark .accordion-button::after{
+body.tamno .accordion-button::after{
     filter:invert(1);
 }
 
-body.dark .accordion-body{
+body.tamno .accordion-body{
     background:#111;
     color:white;
 }
