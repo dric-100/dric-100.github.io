@@ -94,6 +94,8 @@ header{
     height: 102px;
     --media-shadow:rgba(0,0,0,0);
     position: absolute;
+    left: 0px;
+    top: 0px;
 
 }
 
