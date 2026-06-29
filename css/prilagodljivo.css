@@ -1,7 +1,26 @@
-@media (max-width:768px){
 
-    .hamburger-dugme{
-        display:block;
+/* Desktop */
+
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    height: 60px;
+    width: auto;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+
+    .logo {
+        height: 40px;
+        top: 18px;
+        left: 15px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
     }
 
     .meni{
@@ -58,9 +77,73 @@
 
 }
 
-@media (min-width:769px){
+/* Telefon */
 
-    .hamburger-dugme{
-        display:none;
+@media (max-width: 768px) {
+
+    .logo {
+        display: none;
     }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hamburger-dugme{
+        display:block;
+    }
+
+    .meni{
+        display:none;
+        flex-direction:column;
+        width:100%;
+    }
+
+    .meni.aktivno{
+        display:flex;
+    }
+
+    .sadrzaj-padajuceg-menija{
+        position:static;
+        width:100%;
+    }
+
+    .kontrole{
+        position:static;
+        justify-content:center;
+        margin:10px 0;
+    }
+
+    .slajder,
+    video,
+    iframe{
+        width:95%;
+        height:auto;
+        aspect-ratio:16/9;
+    }
+
+    form{
+        width:95%;
+    }
+
+    .hero{
+        width:95%;
+        height:auto;
+        aspect-ratio:16/9;
+        background-attachment:scroll;
+    }
+
+    /* ===== Nastanak stranica ===== */
+
+    .prica-hero{
+        background-attachment:scroll;
+        padding:30px 10px;
+    }
+
+    .prica-preklop{
+        width:95%;
+        padding:20px;
+    }
+
+
 }
